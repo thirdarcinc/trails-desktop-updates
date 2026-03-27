@@ -1,55 +1,38 @@
 {
-  "name": "hazel-server",
-  "version": "5.1.1",
-  "main": "lib/index.js",
+  "name": "carrots",
+  "version": "1.3.0",
   "description": "Lightweight update server for Electron apps",
-  "scripts": {
-    "dev": "npx vercel dev",
-    "test": "xo && jest",
-    "precommit": "lint-staged"
-  },
+  "repository": "PascalPixel/carrots",
   "license": "MIT",
-  "repository": "vercel/hazel",
-  "xo": {
-    "extends": [
-      "prettier"
-    ],
-    "rules": {
-      "camelcase": 0,
-      "new-cap": 0,
-      "unicorn/no-process-exit": 0,
-      "no-await-in-loop": 0,
-      "unicorn/import-index": 0
-    }
-  },
-  "lint-staged": {
-    "*.js": [
-      "yarn test && :",
-      "prettier --single-quote --no-semi --write --no-editorconfig",
-      "git add"
-    ]
+  "type": "module",
+  "main": "lib/index.ts",
+  "scripts": {
+    "dev": "tsx watch server.ts",
+    "start": "tsx server.ts",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "prettier --config .prettierrc.json -c ./**/*.ts && eslint --config .eslintrc.json ./**/*.ts && tsc --noEmit",
+    "format": "prettier --config .prettierrc.json -w ./**/*.ts"
   },
   "dependencies": {
-    "async-retry": "1.2.3",
-    "date-fns": "1.29.0",
-    "express-useragent": "1.0.12",
-    "fetch": "1.1.0",
-    "finalhandler": "1.1.0",
-    "handlebars": "4.0.11",
-    "jest": "24.0.0",
-    "micro": "9.3.3",
-    "ms": "2.1.1",
-    "node-fetch": "2.0.0",
-    "router": "1.3.2",
-    "semver": "5.5.0",
-    "stream-to-string": "1.1.0",
-    "test-listen": "1.1.0"
+    "dotenv": "^17.2.3",
+    "find-my-way": "^9.4.0",
+    "react": "^19",
+    "react-dom": "^19",
+    "semver": "^7.7.3"
   },
   "devDependencies": {
-    "eslint-config-prettier": "2.9.0",
-    "husky": "0.14.3",
-    "lint-staged": "7.0.0",
-    "prettier": "1.10.2",
-    "xo": "0.20.3"
+    "@types/node": "^25.0.10",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "@types/semver": "^7.7.1",
+    "@typescript-eslint/eslint-plugin": "^8.53.1",
+    "@typescript-eslint/parser": "^8.53.1",
+    "async-listen": "^3.1.0",
+    "eslint": "^9",
+    "prettier": "^3.8.1",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.18"
   }
 }
