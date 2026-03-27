@@ -1,4 +1,4 @@
-# 🥕 Carrots
+# 🥕 Hike Carrots
 
 TypeScript-based Electron downloads and updates server that uses GitHub to serve files.
 
